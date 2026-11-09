@@ -18,7 +18,7 @@ export const Testimonials: React.FC = () => {
   };
 
   return (
-    <section id="testimonials" className="py-24 sm:py-32 border-t border-zinc-850 bg-zinc-950/40 relative">
+    <section id="testimonials" className="py-24 sm:py-32 border-t border-zinc-800 bg-zinc-950/40 relative">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>

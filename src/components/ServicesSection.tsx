@@ -12,7 +12,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenInquiry 
   const [activeService, setActiveService] = useState<number>(0);
 
   return (
-    <section id="services" className="py-24 sm:py-32 bg-zinc-950/70 border-t border-zinc-850 relative">
+    <section id="services" className="py-24 sm:py-32 bg-zinc-950/70 border-t border-zinc-800 relative">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         <div className="max-w-3xl mb-16">
           <div className="inline-flex items-center gap-2 text-xs font-mono text-zinc-400 uppercase tracking-widest mb-3">

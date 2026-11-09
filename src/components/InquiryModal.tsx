@@ -62,6 +62,15 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
     }
   }, [isOpen]);
 
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   const toggleService = (service: string) => {
@@ -78,7 +87,7 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md overflow-y-auto">
+    <div role="dialog" aria-modal="true" className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md overflow-y-auto">
       <div className="relative w-full max-w-2xl bg-zinc-950 border border-zinc-800 rounded-3xl overflow-hidden shadow-2xl p-6 sm:p-10 my-8 animate-in fade-in zoom-in-95 duration-200">
         {/* Close Button */}
         <button
@@ -96,10 +105,10 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
               <CheckCircle className="w-8 h-8" />
             </div>
             <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
-              Inquiry Dispatched.
+              Demo Inquiry Complete.
             </h3>
             <p className="mt-3 text-zinc-400 max-w-md text-sm sm:text-base font-light">
-              Thank you for considering KRONA Studio. Our partners will review your project brief and reply within 24 hours with scheduling options.
+              KRONA is a concept site, so this form is not connected to anything. Your details were not sent or stored.
             </p>
             <div className="mt-8">
               <button

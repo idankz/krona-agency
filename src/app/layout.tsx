@@ -15,15 +15,15 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "KRONA™ — Digital Agency & Creative Engineering Studio | Made by idankuz.dev",
-  description: "A premier design and technology agency demo crafting category-defining digital products, brand identities, and high-performance web experiences. Made by idankuz.dev",
-  keywords: ["Digital Agency", "Creative Studio", "Next.js", "Web Development", "Brand Identity", "Design Engineering", "idankuz.dev"],
-  authors: [{ name: "idankuz.dev", url: "https://idankuz.dev" }],
-  creator: "idankuz.dev",
+  title: "KRONA™ — Digital Agency & Creative Engineering Studio | Made by idankz",
+  description: "A premier design and technology agency demo crafting category-defining digital products, brand identities, and high-performance web experiences. Made by idankz",
+  keywords: ["Digital Agency", "Creative Studio", "Next.js", "Web Development", "Brand Identity", "Design Engineering", "idankz"],
+  authors: [{ name: "idankz", url: "https://github.com/idankz" }],
+  creator: "idankz",
   openGraph: {
     title: "KRONA™ — Digital Agency & Creative Engineering Studio",
-    description: "Crafting category-defining digital products and brand systems. Made by idankuz.dev",
-    url: "https://idankuz.dev",
+    description: "Crafting category-defining digital products and brand systems. Made by idankz",
+    url: "https://krona-agency-nextjs.vercel.app",
     siteName: "KRONA Studio",
     type: "website",
   },

@@ -78,11 +78,14 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {/* Sprint */}
           <div
+            role="button"
+            tabIndex={0}
             onClick={() => setSelectedPlan("sprint")}
+            onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setSelectedPlan("sprint"); } }}
             className={`cursor-pointer p-6 sm:p-8 rounded-3xl border transition-all duration-300 ${
               selectedPlan === "sprint"
                 ? "bg-zinc-900 border-white/40 shadow-xl shadow-black/50"
-                : "bg-zinc-950/60 border-zinc-850 hover:border-zinc-700"
+                : "bg-zinc-950/60 border-zinc-800 hover:border-zinc-700"
             }`}
           >
             <div className="flex items-center justify-between mb-4">
@@ -102,11 +105,14 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({
 
           {/* Partner (Recommended) */}
           <div
+            role="button"
+            tabIndex={0}
             onClick={() => setSelectedPlan("partner")}
+            onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setSelectedPlan("partner"); } }}
             className={`cursor-pointer p-6 sm:p-8 rounded-3xl border relative transition-all duration-300 ${
               selectedPlan === "partner"
                 ? "bg-zinc-900 border-white/50 shadow-2xl shadow-white/5"
-                : "bg-zinc-950/60 border-zinc-850 hover:border-zinc-700"
+                : "bg-zinc-950/60 border-zinc-800 hover:border-zinc-700"
             }`}
           >
             <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-white text-zinc-950 text-[10px] font-mono uppercase font-black tracking-widest">
@@ -129,11 +135,14 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({
 
           {/* Flagship */}
           <div
+            role="button"
+            tabIndex={0}
             onClick={() => setSelectedPlan("flagship")}
+            onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setSelectedPlan("flagship"); } }}
             className={`cursor-pointer p-6 sm:p-8 rounded-3xl border transition-all duration-300 ${
               selectedPlan === "flagship"
                 ? "bg-zinc-900 border-white/40 shadow-xl shadow-black/50"
-                : "bg-zinc-950/60 border-zinc-850 hover:border-zinc-700"
+                : "bg-zinc-950/60 border-zinc-800 hover:border-zinc-700"
             }`}
           >
             <div className="flex items-center justify-between mb-4">
@@ -165,11 +174,14 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({
               return (
                 <div
                   key={addon.id}
-                  onClick={() => toggleAddOn(addon.id)}
+                  role="button"
+            tabIndex={0}
+            onClick={() => toggleAddOn(addon.id)}
+            onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleAddOn(addon.id); } }}
                   className={`cursor-pointer p-4 rounded-2xl border transition-all flex items-center justify-between ${
                     active
                       ? "bg-zinc-800 border-zinc-600 text-white"
-                      : "bg-zinc-950/40 border-zinc-850 text-zinc-400 hover:border-zinc-750"
+                      : "bg-zinc-950/40 border-zinc-800 text-zinc-400 hover:border-zinc-700"
                   }`}
                 >
                   <div className="pr-2">
