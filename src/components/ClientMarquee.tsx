@@ -13,7 +13,7 @@ const CLIENTS = [
 
 export const ClientMarquee: React.FC = () => {
   return (
-    <section className="py-12 border-y border-zinc-850 bg-zinc-950/60 overflow-hidden relative">
+    <section className="py-12 border-y border-zinc-800 bg-zinc-950/60 overflow-hidden relative">
       {/* Edge gradient masks for smooth fade */}
       <div className="absolute top-0 bottom-0 left-0 w-24 bg-gradient-to-r from-[#09090b] to-transparent z-10 pointer-events-none" />
       <div className="absolute top-0 bottom-0 right-0 w-24 bg-gradient-to-l from-[#09090b] to-transparent z-10 pointer-events-none" />

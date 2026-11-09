@@ -65,12 +65,18 @@ export default function Home() {
         onOpenInquiry={handleOpenInquiry}
       />
 
+      {/* Honest labelling: the agency, clients and testimonials are fictional */}
+      <p className="fixed bottom-3 left-1/2 -translate-x-1/2 z-40 w-max max-w-[calc(100vw-2rem)] px-4 py-2 rounded-full bg-zinc-900/90 border border-zinc-800 text-zinc-300 text-xs text-center backdrop-blur">
+        Concept site: the agency, clients and testimonials are fictional.
+      </p>
+
       {/* Multi-Step Project Inquiry Modal */}
-      <InquiryModal
-        isOpen={inquiryOpen}
-        onClose={() => setInquiryOpen(false)}
-        initialTier={selectedTier}
-      />
+      {inquiryOpen && (
+        <InquiryModal
+          onClose={() => setInquiryOpen(false)}
+          initialTier={selectedTier}
+        />
+      )}
     </main>
   );
 }

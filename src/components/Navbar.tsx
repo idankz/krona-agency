@@ -53,13 +53,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenInquiry }) => {
             </span>
           </a>
           <a
-            href="https://idankuz.dev"
+            href="https://github.com/idankz"
             target="_blank"
             rel="noreferrer"
             className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-0.5 text-[11px] font-mono text-zinc-400 bg-zinc-900/90 border border-zinc-800 rounded-full hover:border-zinc-700 hover:text-white transition-colors"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-            <span>by idankuz.dev</span>
+            <span>by idankz</span>
           </a>
         </div>
 
@@ -103,12 +103,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenInquiry }) => {
         {/* Mobile Hamburger Button */}
         <div className="flex items-center gap-3 md:hidden">
           <a
-            href="https://idankuz.dev"
+            href="https://github.com/idankz"
             target="_blank"
             rel="noreferrer"
             className="text-[10px] font-mono px-2 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400"
           >
-            by idankuz.dev
+            by idankz
           </a>
           <button
             onClick={onOpenInquiry}
@@ -169,12 +169,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenInquiry }) => {
                 Start a Project
               </button>
               <a
-                href="https://idankuz.dev"
+                href="https://github.com/idankz"
                 target="_blank"
                 rel="noreferrer"
                 className="w-full py-2.5 text-center text-xs font-mono text-zinc-400 hover:text-white transition-colors"
               >
-                Portfolio: idankuz.dev ↗
+                Portfolio: idankz ↗
               </a>
             </div>
           </div>
