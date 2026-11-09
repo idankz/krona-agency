@@ -43,7 +43,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
 
           <button
             onClick={onClose}
-            className="p-2 text-zinc-400 hover:text-white rounded-full bg-zinc-850 hover:bg-zinc-800 transition-colors"
+            className="p-2 text-zinc-400 hover:text-white rounded-full bg-zinc-900 hover:bg-zinc-800 transition-colors"
             aria-label="Close Case Study"
           >
             <X className="w-5 h-5" />
@@ -84,9 +84,9 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-zinc-850">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-zinc-800">
             {/* The Challenge */}
-            <div className="p-6 rounded-2xl bg-zinc-900/40 border border-zinc-850/80">
+            <div className="p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800/80">
               <div className="flex items-center gap-2 text-rose-400 text-sm font-semibold mb-3">
                 <ShieldAlert className="w-4 h-4" />
                 <span>The Challenge</span>
@@ -97,7 +97,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
             </div>
 
             {/* The Solution */}
-            <div className="p-6 rounded-2xl bg-zinc-900/40 border border-zinc-850/80">
+            <div className="p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800/80">
               <div className="flex items-center gap-2 text-emerald-400 text-sm font-semibold mb-3">
                 <CheckCircle2 className="w-4 h-4" />
                 <span>The Engineering Solution</span>
@@ -136,7 +136,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
           </div>
 
           {/* Bottom Action Drawer */}
-          <div className="pt-6 border-t border-zinc-850 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="pt-6 border-t border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-4">
             <span className="text-xs text-zinc-500 font-mono">
               Have a similar challenge for your brand?
             </span>

@@ -107,7 +107,7 @@ export const WorksSection: React.FC<WorksSectionProps> = ({ onSelectProject }) =
                       </h3>
                     </div>
 
-                    <div className="w-10 h-10 rounded-full bg-zinc-850 border border-zinc-800 flex items-center justify-center text-zinc-400 group-hover:text-white group-hover:bg-white group-hover:text-zinc-950 transition-all shrink-0 mt-1">
+                    <div className="w-10 h-10 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 group-hover:text-white group-hover:bg-white group-hover:text-zinc-950 transition-all shrink-0 mt-1">
                       <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </div>
                   </div>
@@ -118,11 +118,11 @@ export const WorksSection: React.FC<WorksSectionProps> = ({ onSelectProject }) =
                 </div>
 
                 {/* Tags row */}
-                <div className="mt-6 pt-5 border-t border-zinc-850/80 flex flex-wrap gap-2">
+                <div className="mt-6 pt-5 border-t border-zinc-800/80 flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-2.5 py-1 rounded-md bg-zinc-850/60 text-[11px] font-mono text-zinc-400"
+                      className="px-2.5 py-1 rounded-md bg-zinc-900/60 text-[11px] font-mono text-zinc-400"
                     >
                       {tag}
                     </span>

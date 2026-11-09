@@ -26,12 +26,12 @@ export const ConsoleEasterEgg = () => {
     );
 
     console.log(
-      "%c✦ Welcome! This entire website is 100% open-source and crafted with precision by @idankuz.",
+      "%c✦ Welcome! This entire website is 100% open-source and crafted with precision by @idankz.",
       "font-size: 12px; color: #e4e4e7; font-weight: 500;"
     );
 
     console.log(
-      "%c✦ Official GitHub: %chttps://github.com/idankuz",
+      "%c✦ Official GitHub: %chttps://github.com/idankz",
       "font-size: 12px; color: #a1a1aa;",
       "font-size: 12px; color: #38bdf8; font-weight: bold; text-decoration: underline;"
     );
@@ -43,7 +43,7 @@ export const ConsoleEasterEgg = () => {
     );
 
     console.log(
-      "%c✦ Tech Stack: Next.js 14 App Router, TypeScript, Tailwind CSS, Lucide Icons, and zero bloat.",
+      "%c✦ Tech Stack: Next.js 16 App Router, TypeScript, Tailwind CSS, Lucide Icons, and zero bloat.",
       "font-size: 12px; color: #a1a1aa;"
     );
 
@@ -58,7 +58,7 @@ export const ConsoleEasterEgg = () => {
     );
 
     console.log(
-      "%c✦ Want to hire or collaborate with Idan? Check out: https://github.com/idankuz 🚀",
+      "%c✦ Want to hire or collaborate with Idan? Check out: https://github.com/idankz 🚀",
       "font-size: 12px; font-weight: bold; color: #34d399; padding: 4px 0;"
     );
   }, []);

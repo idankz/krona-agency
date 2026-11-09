@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 import { X, Check, ArrowRight, Sparkles, CheckCircle, Send } from "lucide-react";
 
 interface InquiryModalProps {
-  isOpen: boolean;
   onClose: () => void;
   initialTier?: string;
 }
@@ -17,6 +16,12 @@ const SERVICE_OPTIONS = [
   "Full Digital Transformation",
 ];
 
+const TIER_BUDGETS: Record<string, string> = {
+  sprint: "$10,000 – $20,000",
+  partner: "$20,000 – $40,000",
+  flagship: "$40,000 – $80,000",
+};
+
 const BUDGET_RANGES = [
   "$10,000 – $20,000",
   "$20,000 – $40,000",
@@ -25,7 +30,6 @@ const BUDGET_RANGES = [
 ];
 
 export const InquiryModal: React.FC<InquiryModalProps> = ({
-  isOpen,
   onClose,
   initialTier,
 }) => {
@@ -33,7 +37,9 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
   const [selectedServices, setSelectedServices] = useState<string[]>([
     "Web Design & Development",
   ]);
-  const [selectedBudget, setSelectedBudget] = useState<string>("$20,000 – $40,000");
+  const [selectedBudget, setSelectedBudget] = useState<string>(
+    TIER_BUDGETS[initialTier ?? ""] ?? "$20,000 – $40,000"
+  );
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -43,26 +49,19 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
   const [submitted, setSubmitted] = useState<boolean>(false);
 
   useEffect(() => {
-    if (initialTier === "sprint") {
-      setSelectedBudget("$10,000 – $20,000");
-    } else if (initialTier === "partner") {
-      setSelectedBudget("$20,000 – $40,000");
-    } else if (initialTier === "flagship") {
-      setSelectedBudget("$40,000 – $80,000");
-    }
-  }, [initialTier]);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, []);
 
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-      setSubmitted(false);
-      setStep(1);
-    } else {
-      document.body.style.overflow = "unset";
-    }
-  }, [isOpen]);
-
-  if (!isOpen) return null;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [onClose]);
 
   const toggleService = (service: string) => {
     setSelectedServices((prev) =>
@@ -78,7 +77,7 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md overflow-y-auto">
+    <div role="dialog" aria-modal="true" className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md overflow-y-auto">
       <div className="relative w-full max-w-2xl bg-zinc-950 border border-zinc-800 rounded-3xl overflow-hidden shadow-2xl p-6 sm:p-10 my-8 animate-in fade-in zoom-in-95 duration-200">
         {/* Close Button */}
         <button
@@ -96,10 +95,10 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
               <CheckCircle className="w-8 h-8" />
             </div>
             <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
-              Inquiry Dispatched.
+              Demo Inquiry Complete.
             </h3>
             <p className="mt-3 text-zinc-400 max-w-md text-sm sm:text-base font-light">
-              Thank you for considering KRONA Studio. Our partners will review your project brief and reply within 24 hours with scheduling options.
+              KRONA is a concept site, so this form is not connected to anything. Your details were not sent or stored.
             </p>
             <div className="mt-8">
               <button
@@ -208,12 +207,13 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-mono uppercase text-zinc-400 mb-1.5">
+                    <label htmlFor="inquiry-name" className="block text-xs font-mono uppercase text-zinc-400 mb-1.5">
                       Your Name *
                     </label>
                     <input
                       required
                       type="text"
+                      id="inquiry-name"
                       placeholder="Alex Mercer"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -222,12 +222,13 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
                   </div>
 
                   <div>
-                    <label className="block text-xs font-mono uppercase text-zinc-400 mb-1.5">
+                    <label htmlFor="inquiry-email" className="block text-xs font-mono uppercase text-zinc-400 mb-1.5">
                       Work Email *
                     </label>
                     <input
                       required
                       type="email"
+                      id="inquiry-email"
                       placeholder="alex@company.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -237,11 +238,12 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono uppercase text-zinc-400 mb-1.5">
+                  <label htmlFor="inquiry-company" className="block text-xs font-mono uppercase text-zinc-400 mb-1.5">
                     Company / Organization
                   </label>
                   <input
                     type="text"
+                    id="inquiry-company"
                     placeholder="Venture Labs Inc."
                     value={formData.company}
                     onChange={(e) => setFormData({ ...formData, company: e.target.value })}
@@ -250,12 +252,13 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono uppercase text-zinc-400 mb-1.5">
+                  <label htmlFor="inquiry-brief" className="block text-xs font-mono uppercase text-zinc-400 mb-1.5">
                     Project Brief & Goals *
                   </label>
                   <textarea
                     required
                     rows={3}
+                    id="inquiry-brief"
                     placeholder="Briefly describe what you're building, target timeline, and any reference links..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}

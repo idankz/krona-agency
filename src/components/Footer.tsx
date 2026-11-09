@@ -13,7 +13,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenInquiry }) => {
   };
 
   return (
-    <footer className="pt-24 pb-12 border-t border-zinc-850 bg-black relative overflow-hidden">
+    <footer className="pt-24 pb-12 border-t border-zinc-800 bg-black relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         {/* Massive Typographic Callout */}
         <div className="pb-20 border-b border-zinc-900">
@@ -23,12 +23,12 @@ export const Footer: React.FC<FooterProps> = ({ onOpenInquiry }) => {
             </span>
             <span className="text-zinc-700 font-mono text-xs">•</span>
             <a
-              href="https://idankuz.dev"
+              href="https://github.com/idankz"
               target="_blank"
               rel="noreferrer"
               className="text-xs font-mono text-emerald-400 hover:text-emerald-300 transition-colors"
             >
-              idankuz.dev
+              idankz
             </a>
           </div>
 
@@ -87,18 +87,18 @@ export const Footer: React.FC<FooterProps> = ({ onOpenInquiry }) => {
             <div className="text-zinc-500 uppercase tracking-wider mb-3">Creator & Direct Connect</div>
             <div className="flex flex-col gap-2 text-zinc-400">
               <a
-                href="https://idankuz.dev"
+                href="https://github.com/idankz"
                 target="_blank"
                 rel="noreferrer"
                 className="text-white font-semibold hover:text-emerald-400 transition-colors flex items-center gap-1"
               >
-                <span>idankuz.dev</span>
+                <span>idankz</span>
                 <span className="text-[10px] text-zinc-500 font-normal">(Portfolio ↗)</span>
               </a>
               <a href="https://twitter.com" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">
                 Twitter / X ↗
               </a>
-              <a href="https://github.com/idankuz" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">
+              <a href="https://github.com/idankz" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">
                 GitHub ↗
               </a>
               <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">
@@ -118,12 +118,12 @@ export const Footer: React.FC<FooterProps> = ({ onOpenInquiry }) => {
             <span className="text-zinc-400">
               Made with precision by{" "}
               <a
-                href="https://idankuz.dev"
+                href="https://github.com/idankz"
                 target="_blank"
                 rel="noreferrer"
                 className="text-white font-bold hover:text-emerald-400 transition-colors underline underline-offset-4 decoration-zinc-700"
               >
-                idankuz.dev
+                idankz
               </a>
             </span>
             <button
